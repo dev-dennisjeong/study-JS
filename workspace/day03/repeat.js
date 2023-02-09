@@ -57,5 +57,5 @@ console.log(datas.indexOf(3));
 
 // datas.forEach(function(data, i, datas){});
 datas.forEach(data => console.log(data));
-console.log(datas.filter(data => data % 2 == 0).join(","));
+console.log(datas.filter(data => data % 2 == 1).join(","));
 console.log(datas.map(data => data * 2));

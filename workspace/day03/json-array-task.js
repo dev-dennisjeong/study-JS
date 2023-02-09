@@ -19,6 +19,7 @@ let products = [
 ];
 
 let productsJSON = JSON.stringify(products);
+console.log(productsJSON);
 
 // 각 상품별 총 가격을 구한 뒤 출력한다.
 // callback 함수를 사용한다.
