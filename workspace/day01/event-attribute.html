@@ -8,7 +8,10 @@
 </head>
 <body>
     <h3>마우스를 올려보세요</h3>
-    <hr>
+    <hr> <!-- 경계선을 그어준다. -->
     <img src="image/icon1.png" onmouseover="this.src = 'image/icon2.png'" onmouseout="this.src = 'image/icon1.png'">
+    <!-- img 태그에 image폴더 안에 있는 icon1.png 파일의 경로를 써준다.
+         onmouseover 이벤트로 마우스를 올리면 this 즉, 현재 img 태그의 경로를 정해준다.
+         마우스를 벗어나면 onmouseout이벤트로 다시 img 태그의 경로를 바꿔준다. -->
 </body>
 </html>

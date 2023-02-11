@@ -9,9 +9,19 @@
 <body>
     <h3>마우스를 올려보세요</h3>
     <hr>
-    <img src="image/icon1.png" onmouseover="changeImage('over', this)" onmouseout="changeImage('out', this)">
+    <img src="image/icon1.png" onmouseover="changeImage('over', this)" onmouseout="changeImage('out', this)">i
+    <!-- 마우스를 올리면 changeImage함수를 실행, e가 over면 this, 즉 이 img 태그의 image를 icon2로 변경 -->
+    <!-- 마우스를 벗어나면 또다시 changeImage함수를 실행, e가 out이면 image를 icon1로 다시 변경 -->
 </body>
 <script>
+    // 자바스크립트 코드
+    // 자바스크립트는 사용자의 입력을 처리하거나 웹 애플리케이션을 작성하는 등 웹 페이지의 동적 제어에 사용된다.
+    // body 태그 밖에 작성하자(가장 속도가 빠름)
+
+    // {} 태그 밖에서 선언하면 함수, {} 안에 있으면 메소드
+    /* function 함수명(parameter1, parameter2){
+        parameter1이 over면 icon2 이미지의 경로, 아니면 icon1 이미지의 경로를 넣어준다
+    } */
     function changeImage(e, object){
         object.src = e == 'over' ? 'image/icon2.png' : 'image/icon1.png';
     }

@@ -9,7 +9,10 @@
 <body>
     <h3>링크의 href에 자바스크립트 코드 작성</h3>
     <hr>
+    <!-- href=javascript:void()로 a태그의 하이퍼링크 디자인은 살리면서 기능을 무효화시킨다.-->
+    <!-- onclick이벤트로 changeImage함수를 실행하는데 이 요소(a태그)의 형제자매 관계를 맺은 다음 요소에서 실행 -->
     <a href="javascript:void(0)" onclick="changeImage(this.nextElementSibling)">클릭해보세요~!</a>
+    <!-- img태그에서 changeImage함수가 실행된다. -->
     <img class="on" src="image/icon4.png">
 </body>
 <script src="script.js"></script>
