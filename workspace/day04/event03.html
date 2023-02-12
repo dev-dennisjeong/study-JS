@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>첨부파일 썸네일</title>
     <style>
+        /* css */
+        /* div의 width 150px 지정 */
         div {
             width: 150px;
         }
 
+        /* 가운데 정렬, 폰트 크기 20px  */
         div.file-name {
             text-align: center;
             font-size: 20px;
         }
 
+        /* label[for='attach'] 안에 있는 div.image의 스타일 주기 */
         label[for='attach'] div.image {
-            position: relative;
-            height: 150px   ;
+            position: relative; /* 요소 자기 자신을 기준으로 배치 */
+            height: 150px;
             background-image: url('https://cdn-icons-png.flaticon.com/512/272/272446.png');
+            /* 배경이미지를 url 태그에 있는 경로 이미지로 설정 */
             background-size: 100%;
-            cursor: pointer;
+            cursor: pointer; /* 커서 올리면 클릭 포인터 모양으로 바뀜 */
         }
+
+        /* div 안에 있는 span 태그에 스타일 주기 */
         div span {
             text-align: center;
-            display: none;
+            display: none; /* 숨김 */
             width: 30px;
             height: 30px;
-            position: absolute;
+            position: absolute; /* 부모 요소(div.image)를 기준으로 배치 */
             right: 0;
             top: 0;
             font-size: 20px;
@@ -38,11 +45,13 @@
     </style>
 </head>
 <body>
+    <!-- label 태그 - 클릭의 유효 범위를 넓혀줌 -->
+    <!-- label for="id명" - 같은 id명의 input 태그를 제어하여 상태를 변경하게끔 도와주는 태그 -->
     <label for="attach">
-    <div class="image">
-        <span>X</span>
-    </div>
-    <div class="file-name"></div>
+        <div class="image">
+            <span>X</span>
+        </div>
+        <div class="file-name"></div>
     </label>
     <input type="file" id="attach" style="display: none" />
 </body>
@@ -54,24 +63,39 @@
     const fileName = document.querySelector('.file-name');
     // x 버튼을 누르면, 기본 이미지로 변경!
     closeSpan.addEventListener('click', function (e) {
+        // event.preventDefault() - x 버튼 클릭 동작을 방지하는 메소드
         e.preventDefault();
+        // 파일 이미지 비우기
         input.value = "";
+        // 파일명 비우기
         fileName.innerHTML = "";
+        // x 버튼 숨기기
         this.style.display = 'none';
+        // 기본 이미지로 설정
         imgDiv.style.backgroundImage = `url('https://cdn-icons-png.flaticon.com/512/272/272446.png')`;
     });
 
     file.addEventListener('change', function (e) {
+        // 이벤트 타겟의 파일 이름을 name 변수에 담아 선언
         let name = e.target.files[0].name;
+        // name을 fileName 문구로 출력
         fileName.innerHTML = name;
+        // closeSpan(x 버튼)을 보이게 하기
         closeSpan.style.display = "inline-block";
+        // 기존의 이미지 숨김 처리
         this.style.display = 'none';
         let reader = new FileReader();
+        // 이벤트 타겟의 url을 불러와서
         reader.readAsDataURL(e.target.files[0]);
+        // 올리기
+        // onload - file이 로드된 후 발생하는 이벤트
         reader.onload = function (e) {
+            // 이벤트가 발생된 타겟의 url을 출력해서 result에 담아줌
             let result = e.target.result;
+            // result가 이미지라면 result에 담긴 이미지로 설정
             if (result.includes('image')) {
                 imgDiv.style.backgroundImage = `url('${result}')`;
+            // 이미지가 아니라면 no_image.png를 이미지로 설정
             } else {
                 imgDiv.style.backgroundImage = `url('no_image.png')`;
             }

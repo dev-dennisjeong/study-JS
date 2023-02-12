@@ -18,11 +18,18 @@
     </ul>
 </body>
 <script>
+    //querySelector는 CSS 선택자를 기반으로 요소를 가져올 수 있음(편함)
+
+    // P태그의 요소를 P에 담아 상수 선언
     const p = document.querySelector("p");
+    //li태그 안에 클래스 이름이 odd인 모든 요소들을 oddList에 담아 선언
     const oddList = document.querySelectorAll("li.odd");
+    //li태그 안에 클래스 이름이 even인 모든 요소들을 evenList에 담아 선언
     const evenList = document.querySelectorAll("li.even");
+    // li태그를 list에 담아 상수로 선언
     const list = document.getElementsByTagName("li");
 
+    // p의 HTML 내용 수정
     p.innerHTML = "수정된 단락이에요";
 
     // odd의 글자색은 전부 보라색으로,
@@ -33,6 +40,9 @@
 
     // 고수: 한 줄로 해결
     HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+    // forEach문을 통해 li에서 class 속성을 가져와 
+    //클래스 이름이 odd면 purple로, odd가 아니면 green으로 color를 변경
     list.forEach(li => li.style.color = li.getAttribute("class") == 'odd' ? 'purple' : 'green');
 
 </script>

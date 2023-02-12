@@ -15,7 +15,7 @@ let products = [
     new Product('과자', 1000, 50),
     new Product('아이스크림', 2000, 30)
 ];
-
+console.log(products);
 productsJSON = JSON.stringify(products);
 
 let file = require('fs');

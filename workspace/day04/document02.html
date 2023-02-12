@@ -17,7 +17,7 @@
         </div>
         <div>
             <label>
-                <input type="checkbox" name="language" value="java" checked="checked" <!-- <- HTML에서 절대 쓰지 말기 -->>JAVA
+                <input type="checkbox" name="language" value="java" checked="checked" <!-- <- HTML에서 절대 쓰지 말기 -->JAVA
             </label>
             <label>
                 <input type="checkbox" name="language" value="c">C
@@ -29,13 +29,17 @@
     </form>
 </body>
 <script>
+    // lagnuage라는 이름을 가진 요소들을 가져와 checkboxes에 담아 상수로 선언
     const checkboxes = document.getElementsByName("language");
+    // joinform 이름의 form 태그를 상수 form에 담아 선언
     const form = document.joinForm;
 
+    // id의 value가 없다면 아이디를 입력하라는 경고창을 띄어준다.
     if(!form.id.value){
         alert("아이디를 입력해주세요")
     }
     
+    // checkbox를 check된 상태로 해준다.
     checkboxes.forEach(checkbox => {
         checkbox.checked = true;
     });

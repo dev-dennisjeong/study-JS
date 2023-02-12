@@ -20,9 +20,14 @@
 // setMilliseconds(ms): 밀리초 저장
 // setTime(t): 밀리초 단위인 t값으로 시간 저장
 
-let date = new Date("2023-01-01 15:30:30");
-console.log(date.getMonth()+1); //month는 0~11까지이므로 1더해줘야함
-console.log(date.getDate());
-console.log(date.getHours());
-console.log(date.getMinutes());
-console.log(date.getSeconds());
+let date = new Date("2023-01-01 15:30:30"); //date 형식
+//month를 출력 month는 0~11까지이므로 1더해줘야함
+console.log(date.getMonth()+1); // 1
+// date를 가져와서 출력
+console.log(date.getDate()); // 1
+// hours를 가져와서 출력
+console.log(date.getHours()); // 15
+// minutes을 가져와서 출력
+console.log(date.getMinutes()); // 30
+// seconds를 가져와서 출력
+console.log(date.getSeconds()); // 30

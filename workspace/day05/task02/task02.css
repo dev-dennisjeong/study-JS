@@ -13,13 +13,11 @@ fieldset {
     border-top: 5px dashed purple;
 }
 
-
 #result {
     border: none;
     font-size: 12px;
     margin-top: 20px;
 }
-
 
 #input {
     border: none;

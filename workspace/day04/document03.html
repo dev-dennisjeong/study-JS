@@ -13,8 +13,10 @@
     <div id="odd">첫 번째 DIV입니다.</div>
 </body>
 <script>
+    // id로 요소를 가져옴
     const div = document.getElementById("odd");
-    console.log(div.innerHTML);
-    div.style.color = 'red';
+    // id가 odd인 div의 html을 콘솔창에 출력
+    console.log(div.innerHTML); // 첫 번째 DIV입니다.
+    div.style.color = 'red'; // odd가 첫번째인 것만 적용이 됨(중복x)
 </script>
 </html>

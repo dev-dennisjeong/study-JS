@@ -5,6 +5,7 @@ const check = document.querySelector("input#input-button")
 const result = document.querySelector("div#result");
 const hangle = "공일이삼사오육칠팔구";
 const isNumeric = n => !isNaN(n); //숫자인지 문자인지 검사
+// isFinite
 
 check.addEventListener("click", function(){
     if(isNumeric(input.value)){
@@ -19,3 +20,4 @@ check.addEventListener("click", function(){
         result.innerHTML = "숫자만 입력해주세요.";
     }
 });
+

@@ -10,18 +10,23 @@
     <h3>CSS 스타일 동적 변경</h3>
     <hr>
     <p>클릭하세요.</p>
-    <!-- <button type="button"></button> -->
     <input type="button", value="스타일 변경">
 </body>
 <script>
+    // 버튼 타입인 input태그를 input 상수에 담아서 선언
     const input = document.querySelector("input[type=button]");
+    // p 태그를 p 상수에 담아서 선언
     const p = document.querySelector("p");
 
+    // input에 click 이벤트를 추가(버튼을 누르면 이벤트 실행)
     input.addEventListener("click", function(){
+        //input[type=button]의 색을 yellow로 설정
         this.style.background = "yellow";
+        // p태그의 스타일 변경
         p.style.fontSize = "30px";
         p.style.border = "3px dashed red";
-        p.style.width = "40vw"; /* 부모 요소가 아닌 브라우저 기준의 % */
+        p.style.width = "40vw"; /* vw(viewport width) -부모 요소가 아닌 브라우저 기준의 % width*/
+                                /* vh(viewport heigth) - 브라우저 기준 % height */
     });
 </script>
 </html>

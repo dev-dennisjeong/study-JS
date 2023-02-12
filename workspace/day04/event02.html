@@ -18,15 +18,22 @@
     </form>
 </body>
 <script>
+    // input에 joingForm에서 name이 id인 input 태그를 담아서 상수로 선언
     const input = joinForm.id;
+    // result에 p태그의 result를 id이름으로 가져와 담아 상수로 선언
     const result = document.querySelector("p#result");
 
+    // blur() - 대상 이벤트가 포커스를 잃었을 때 이벤트를 처리하는 이벤트 핸들러
     input.addEventListener("blur", function(){
+        // id를 입력하는 text 상자에 id가 입력되지 않고 넘어간다면,
+        // result 자리에 아이디를 입력해주세요. 라는 문구를 띄어준다.
         if(!this.value){
             result.innerHTML = "아이디를 입력해주세요";
             result.style.color = "red";
+            // focus() - 키 입력을 받을 수 있도록 이 객체에 포커스 지정
             this.focus();
         }else{
+            // id를 입력했다면, 사용 가능한 아이디입니다 문구를 띄어줌
             result.innerHTML = "사용 가능한 아이디입니다.";
             result.style.color = "blue";
         }

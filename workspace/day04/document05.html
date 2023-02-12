@@ -11,20 +11,37 @@
     <p>createElement("태그명"), appendChild("태그 객체"), removeChild("태그 객체")</p>
     <p>위 3개의 메소드를 이용해서 새로운 객체를 생성, 삽입, 삭제한다.</p>
 
+    <!-- 하이퍼링크를 통해 자바스크립트의 createDIV()함수를 호출 -->
     <a href="javascript:createDIV()">DIV 생성</a>
 </body>
 <script>
+    // 순서 매겨줄 count 상수 선언해서 0으로 초기화
     globalThis.count = 0;
 
     function createDIV(){
-        count ++;
+        count ++; //count는 1부터 시작
+
+        // color를 담을 배열 선언
         let colors = ['yellow', 'green', 'red', 'pink', 'orange'];
+
+        // 인덱스 번호로 쓸 i를 랜덤으로 설정(color 랜덤으로 뽑기 위함)
         let i = Math.floor(Math.random() * colors.length);
+
+        // 새로운 div 생성(createElement("태그명"))
         const newDiv = document.createElement("div");
+
+        // 새로운 div에 HTML 문구 입력(count는 createDIV가 실행될 때마다 1씩 증가)
         newDiv.innerHTML = `새로 생성된 ${count}번 div입니다.`;
+
+        // 새로운 div의 배경색을 랜덤으로 뽑아서 설정해줌
         newDiv.style.backgroundColor = colors[i];
+
+        // newDiv 요소 안에 자식 요소를 추가
         document.body.appendChild(newDiv);
 
+        // 클릭 이벤트로 클릭할 때마다 newDiv를 지워줌
+        // removeChild는 부모에서 포함된 자식 노드가 존재할 경우 
+        // 일치하는 아이디나 클래스 등과 같은 속성을 통해 자식 노드를 제거
         newDiv.addEventListener("click", e => {newDiv.parentElement.removeChild(newDiv)});
         // newDiv.onclick = e => {newDiv.parentElement.removeChild(newDiv)};
     }

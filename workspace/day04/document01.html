@@ -26,16 +26,21 @@
      </ul>
  </body>
  <script>
-     const oddList = document.getElementsByClassName("odd");
+    // 클래스 이름이 odd인 요소들을 가져와 oddList에 담아 상수로 선언
+    const oddList = document.getElementsByClassName("odd");
+    // 클래스 이름이 even인 요소들을 가져와 evenList에 담아 상수로 선언
      const evenList = document.getElementsByClassName("even");
  
-     console.log(oddLists.length);
-     console.log(evenLists.length);
+     console.log(oddList.length); // 3
+     console.log(evenList.length); // 2
  
+     // HTMLCollection은 filter, forEach 등 Array에서 기본적으로 제공해주는 함수를 제공하지 않는다.
+     // HTMLCollection.prototype에 함수를 직접 생성하여 Array 객체로 변환해준다.
      HTMLCollection.prototype.forEach = Array.prototype.forEach;
  
-     oddList.forEach(odd => odd.style.color = 'red');
-     evenList.forEach(even => even.style.color = 'blue');
+     //forEach 가능
+     oddList.forEach(odd => odd.style.color = 'red'); //oddList 요소들의 색을 red로 바꿔준다.
+     evenList.forEach(even => even.style.color = 'blue'); //evenList 요소들의 색을 blue로 바꿔준다.
  </script>
  </html>
  
